@@ -1,2 +1,2 @@
 #!/bin/bash
-shopt -s extglob; for file in *.html; do [ ! -e "../$file" ] || [ "$file" -nt "../$file" ] && cp "$file" "../$file"; done
+find . -maxdepth 1 -name "*.html" -exec cp --update -t .. {} +
